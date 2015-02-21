@@ -18,3 +18,9 @@ A Meteor JS application for financial data.
 After cloning you must create this file, and run modified `meteor` command to start the app: 
 
 `meteor --settings settings.json`
+
+You reference these settings using `keyName` in `server.js`: 
+
+```javascript
+var someTokenAuthKey = Meteor.settings.keyName;
+```
