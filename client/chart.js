@@ -1,6 +1,6 @@
 Template.lineChart.rendered = function(){
   //Width and height
-  var parseDate = d3.time.format("%Y-%m-%d").parse;
+
   var margin = {top: 20, right: 20, bottom: 30, left: 50},
     width = 400 - margin.left - margin.right,
     height = 300 - margin.top - margin.bottom;
@@ -47,34 +47,15 @@ Template.lineChart.rendered = function(){
     .style("text-anchor", "end")
     .text("Price ($)");
 
-  Deps.autorun(function(){
-    var response = Session.get("quandlList");
-    var dataset = [];
+  Tracker.autorun(function(){
+    var dataset = Session.get("quandlList");
 
-    if (!response) {
-      Meteor.defer(function () {
-        var response = Session.get("quandlList");
-        console.log("Meteor defer is running")
-        var respData = response.data;
-        return respData
-      })
-      console.log("return respData inside defer");
-      return respData
+    if (!dataset) {
+      return Meteor.defer(function () {
+        console.log("dataset from defer");
+        var dataset = Session.get("quandlList");
+      });
     }
-    
-    var respData = response.data;
-    
-    _.map( respData , function (item, index) {
-      if ( index < 100 ) {
-        var myDate = parseDate( item[0] ),
-            price = item[1]; 
-  
-          dataset.push({
-            date : myDate,
-            value : price
-          });
-      }
-    });
 
     var paths = svg.selectAll("path.line")
       .data([dataset]); //todo - odd syntax here - should use a key function, but can't seem to get that working
