@@ -14,7 +14,7 @@
   <div class="row">
    <div class="col-sm-12">
      <h1>TSX ETFs and Stocks</h1>
-    <h3>by <a href="http://twitter.com/Royal_Arse">@Royal_Arse</a>, of <a href="http://cacheflow.ca">cacheflow.ca</a></h3>
+    <h3>by <a href="http://twitter.com/Royal_Arse">@Royal_Arse</a> of <a href="http://cacheflow.ca">cacheflow.ca</a></h3>
     <p>Code on <a href="http://github.com/DeBraid/tsx-etfs">Github.</a></p>
    </div> 
   </div>
@@ -26,20 +26,25 @@
       <svg id="lineChart"></svg>
     </div>
     <div class="col-sm-4">    
-      <div class="input-group add-on">
-        <input type="text" class="form-control" placeholder="Enter ticker symbol" name="ticker" id="ticker-search">
+      {{#with inputState }}
+      <div class="input-group add-on {{ this }}">
+          <input type="text" class="form-control" placeholder="Enter ticker symbol" name="ticker" id="ticker-search">
         <div id="get-new-data" class="input-group-btn">
           <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
         </div>
       </div>
+      {{/with}}
     
-      <h4>Examples: </h4>
-      {{#each TSX }}
-        <span class="ticker-list" style="padding-right: 5px;">
-          {{ this }}
-        </span>
-      {{/each}}
-
+      {{#with tickers }}      
+        <h3>ETFs</h3>
+        {{#each this.etfs}}
+          <span class="ticker-list" style="padding-right: 5px;">{{ this }}</span>
+        {{/each }}
+        <h3>Stocks</h3>
+        {{#each this.stocks}}
+          <span class="ticker-list" style="padding-right: 5px;">{{ this }}</span>
+        {{/each }}
+      {{/with}}
     </div>
   </div>
 </template>

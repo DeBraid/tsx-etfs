@@ -2,7 +2,9 @@ Template.lineChart.events({
   'keyup #ticker-search': function (e,t) {
     var searched = t.find('input').value; 
     if  ( e.keyCode == 13 ) {
-      return Session.set('selectedTicker', searched);
+      Session.set('selectedTicker', searched);
+      Session.set('inputState', 'has-warning');
+      // return $('.input-group').addClass('has-warning');
     }
   },
   'click #get-new-data': function (e,t) {
@@ -13,8 +15,17 @@ Template.lineChart.events({
 });
 
 Template.lineChart.helpers({
-  TSX: function () {
-    return ["R","WEF","CVE","TD","MFC","PD","RY","TLM","PLI","ABX","PWT","YRI","SLF","RIO","SGY","ECA","G","LTS","TA","BXE","ELD","COS","CPG","SU","LEG","CR","CM","BTO","ERF","CNQ","TXG","BNK","HSE","TCW","BNS","BB","IMG","BCE","BTE","FM","LSG","LUN","BMO","PRE","K","CRH","EDV","WCP","TGZ","CIX","DGC","NGD","TRP","SNC","MMT","T","FTT","ENB","NA","AC","SVC","SMF","PRW","IPL","MEG","KEL","FTS","AEM","NKO","STB","CAE","TRI","DTX","HBM","PGF","TRQ","PSK","IMO","OGC","CNR","ATH","POT","MND","PPY","PPL","CCO","HNL","LRE","DPM","POW","S","GWO"];
+  tickers: function () {
+    return {
+      stocks : ["R","WEF","CVE","TD","MFC","PD","RY","TLM","PLI","ABX","PWT","YRI","SLF","RIO","SGY","ECA","G","LTS","TA","BXE","ELD","COS","CPG","SU","LEG","CR","CM","BTO","ERF","CNQ","TXG","BNK","HSE","TCW","BNS","BB","IMG","BCE","BTE","FM","LSG","LUN","BMO","PRE","K","CRH","EDV","WCP","TGZ","CIX","DGC","NGD","TRP","SNC","MMT","T","FTT","ENB","NA","AC","SVC","SMF","PRW","IPL","MEG","KEL","FTS","AEM","NKO","STB","CAE","TRI","DTX","HBM","PGF","TRQ","PSK","IMO","OGC","CNR","ATH","POT","MND","PPY","PPL","CCO","HNL","LRE","DPM","POW","S","GWO"],
+      etfs : ["XIU","XIC","XMD","XCS","XEG","XIT","XGD","XFN","XMA","XRE","XTR","XDV","XCG","XCV","XEN","XSB","XBB","XRB","XCB","XGB","XLB","XSP","XSU","XIN","XEM","XWD","ZCN","ZDJ","ZUE","ZDM","ZEM","ZCH","ZID","ZEB","ZEO","ZUT","ZRE","ZQQ","ZUH","ZUB","ZGI","ZMT","ZJG","ZJO","ZJN","ZAG","ZFS","ZFM","ZFL","ZRR","ZPS","ZCS","ZCM","ZLC","ZHY","ZEF","ZDV","ZPR","CBQ","CDZ","CLO","CLU","CRQ","CWW","CMW","CIE","CJP","CPD","DLR","DLR.U","HXU","HXD","HEU","HED","HFU","HFD","HMU","HMD","HOU","HOD","HNU","HND","HBU","HBD","HAU","HAD","HBB","FHB","RWC","RWE","RWE.B","RWU","RWU.B","RWW","RWW.B","DXM","WXM","FXM","QXM","UXM","UXM.B","YXM","YXM.B","XXM","XXM.B","LXF","OXF","FXF","MXF","TXF","BXF","AXF","KXF","GXF","PXF","EXM","VCE","VCN","VDY","VRE","VUN","VUS","VFV","VSP","VGG","VGH","VXC","VDU","VEF","VE","VA","VEE","VAB","VSB","VSC","VBU","VBG"]
+    }
+  },
+  XIU: function () {
+    return XIU.find();
+  },
+  inputState: function () {
+    return Session.get('inputState');
   }
 });
 
@@ -50,9 +61,9 @@ Template.lineChart.created = function () {
 
 Template.lineChart.rendered = function(){
   
-  var margin = {top: 20, right: 20, bottom: 30, left: 50},
-    width = 400 - margin.left - margin.right,
-    height = 300 - margin.top - margin.bottom;
+  var margin = {top: 20, right: 20, bottom: 30, left: 35},
+    width = 333 - margin.left - margin.right,
+    height = 350 - margin.top - margin.bottom;
 
   // data format: "2015-01-30"
   var x = d3.time.scale()
@@ -97,11 +108,18 @@ Template.lineChart.rendered = function(){
     .text("Price ($)");
 
   Tracker.autorun(function(){
+    console.log("dataset tracker");
     var dataset = Session.get("lineChartData");
+      Session.set('inputState', 'has-success');
+
+    // $('.input-group').addClass('has-success');
 
     if (!dataset) {
       return Meteor.defer(function () {
         console.log("dataset from defer");
+        // $('.input-group').addClass('has-success');
+      Session.set('inputState', 'has-success');
+
         var dataset = Session.get("lineChartData");
       });
     }
