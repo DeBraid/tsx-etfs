@@ -7,7 +7,7 @@
 meteor-platform
 autopublish
 insecure
-bootstrap
 d3
 http
 underscore
+mrt:bootstrap-3

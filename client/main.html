@@ -1,5 +1,6 @@
 <head>
   <title>TSX ETF and Stocks</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 </head>
 
 <body>
@@ -11,19 +12,27 @@
 
 <template name="welcome">
   <div class="row">
-    <h1>TSX ETFs and Stocks</h1>
+   <div class="col-sm-12">
+     <h1>TSX ETFs and Stocks</h1>
     <h3>by <a href="http://twitter.com/Royal_Arse">@Royal_Arse</a>, of <a href="http://cacheflow.ca">cacheflow.ca</a></h3>
     <p>Code on <a href="http://github.com/DeBraid/tsx-etfs">Github.</a></p>
+   </div> 
   </div>
 </template>
 
 <template name="lineChart">
   <div class="row">
-    <div class="col-sm-3">
+    <div class="col-sm-7">
       <svg id="lineChart"></svg>
     </div>
-    <div class="col-sm-3">
-      Type TSX ticker symbol, then <strong>hit enter</strong>: <input id="ticker-search" type="text" value="XIU">
+    <div class="col-sm-5">
+      <!-- Type TSX ticker symbol, then <strong>hit enter</strong>: <input id="ticker-search" type="text" value="XIU">
+      <button class="btn btn-warning" id="getNewData">search</button> -->
+
+            <div class="input-group">
+               <input id="ticker-search" type="text" class="form-control" placeholder="XIU">
+               <span id="get-new-data" class="input-group-addon">Search</span>
+            </div>
 
       <h4>Examples: </h4>
       {{#each TSX }}

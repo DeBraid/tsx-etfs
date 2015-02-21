@@ -4,6 +4,11 @@ Template.lineChart.events({
     if  ( e.keyCode == 13 ) {
       return Session.set('selectedTicker', searched);
     }
+  },
+  'click #get-new-data': function (e,t) {
+    console.log("clicked getNewData");
+    var searched = t.find('input').value; 
+    return Session.set('selectedTicker', searched);
   }
 });
 
