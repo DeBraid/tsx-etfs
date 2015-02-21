@@ -22,17 +22,14 @@
 
 <template name="lineChart">
   <div class="row">
-    <div class="col-sm-7">
+    <div class="col-sm-6">
       <svg id="lineChart"></svg>
     </div>
-    <div class="col-sm-5">
-      <!-- Type TSX ticker symbol, then <strong>hit enter</strong>: <input id="ticker-search" type="text" value="XIU">
-      <button class="btn btn-warning" id="getNewData">search</button> -->
-
-            <div class="input-group">
-               <input id="ticker-search" type="text" class="form-control" placeholder="XIU">
-               <span id="get-new-data" class="input-group-addon">Search</span>
-            </div>
+    <div class="col-sm-4">
+      <div class="input-group">
+         <input id="ticker-search" type="text" class="form-control" placeholder="XIU">
+         <span id="get-new-data" class="input-group-addon" style="cursor: pointer;">Search</span>
+      </div>
 
       <h4>Examples: </h4>
       {{#each TSX }}

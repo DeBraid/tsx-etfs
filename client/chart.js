@@ -14,7 +14,7 @@ Template.lineChart.events({
 
 Template.lineChart.helpers({
   TSX: function () {
-    return ["BBD-B","R","WEF","CVE","TD","MFC","PD","RY","TLM","PLI","ABX","TCK-B","PWT","YRI","SLF","RIO","SGY","ECA","G","LTS","TA","BXE","ELD","COS","CPG","SU","LEG","CR","CM","BTO","ERF","CNQ","TXG","BNK","HSE","TCW","BNS","BB","IMG","BCE","BTE","FM","LSG","LUN","BMO","PRE","K","CRH","EDV","WCP","TGZ","CIX","DGC","NGD","TRP","SNC","SJR-B","MMT","BAM-A","T","INN-UN","FTT","ENB","NA","AC","SVC","SMF","PRW","ATD-B","IPL","CHP-UN","MEG","KEL","FTS","AEM","NKO","STB","CAE","TRI","DTX","HBM","CHR-B","PGF","TRQ","PSK","IMO","OGC","CNR","ATH","POT","MND","PPY","PPL","CCO","HNL","LRE","DPM","POW","S","GWO"];
+    return ["R","WEF","CVE","TD","MFC","PD","RY","TLM","PLI","ABX","PWT","YRI","SLF","RIO","SGY","ECA","G","LTS","TA","BXE","ELD","COS","CPG","SU","LEG","CR","CM","BTO","ERF","CNQ","TXG","BNK","HSE","TCW","BNS","BB","IMG","BCE","BTE","FM","LSG","LUN","BMO","PRE","K","CRH","EDV","WCP","TGZ","CIX","DGC","NGD","TRP","SNC","MMT","T","FTT","ENB","NA","AC","SVC","SMF","PRW","IPL","MEG","KEL","FTS","AEM","NKO","STB","CAE","TRI","DTX","HBM","PGF","TRQ","PSK","IMO","OGC","CNR","ATH","POT","MND","PPY","PPL","CCO","HNL","LRE","DPM","POW","S","GWO"];
   }
 });
 
