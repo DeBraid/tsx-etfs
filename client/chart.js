@@ -29,6 +29,7 @@ Template.lineChart.events({
 
 Template.lineChart.rendered = function(){
   //Width and height
+  var parseDate = d3.time.format("%Y-%m-%d").parse;
   var margin = {top: 20, right: 20, bottom: 30, left: 50},
     width = 400 - margin.left - margin.right,
     height = 300 - margin.top - margin.bottom;
@@ -89,17 +90,18 @@ Template.lineChart.rendered = function(){
       console.log("return respData inside defer");
       return respData
     }
-    // console.log("respData", respData);
+    
     var respData = response.data;
     
     _.map( respData , function (item, index) {
-      if ( index < 150 ) {
-        var parseDate = d3.time.format("%Y-%m-%d").parse;
-        var myDate = parseDate(item[0]);
+      if ( index < 100 ) {
+        
+        var myDate = parseDate( item[0] ),
+            price = item[1]; 
   
         dataset.push({
           date : myDate,
-          value : item[1],
+          value : price
         });
       }
     });
