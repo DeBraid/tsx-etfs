@@ -1,24 +1,40 @@
+Template.lineChart.events({
+  'keyup #ticker-search': function (e,t) {
+    var searched = t.find('input').value;
+    if (searched.length > 1) {
+      return Session.set('searchedTicker', searched);
+    };
+  }
+});
+
 Template.lineChart.created = function () {
-  Meteor.call("getQuandlData", "XIU", function(error, result) {
-    if (error)
-        console.log(error)
-        
-    var rawData = JSON.parse(result.content),
-      response = rawData.data,
-      dataset = [],
-      parseDate = d3.time.format("%Y-%m-%d").parse;
+  
+  Tracker.autorun(function () {
+    if (Session.get('searchedTicker')) {
+      var ticker = Session.get('searchedTicker');
+    } else{
+      var ticker = "XIU"
+    };
     
-    response.map(function (item, index) {
-      var myDate = parseDate( item[0] ),
-          price = item[1]; 
+    Meteor.call("getQuandlData", ticker , function(error, result) {
+      if (error)
+          console.log(error)
+          
+    var parseDate = d3.time.format("%Y-%m-%d").parse, 
+        dataset = [],
+        response = JSON.parse(result.content).data;
+      
+      response.map(function (item, index) {
+        var myDate = parseDate( item[0] ),
+            price = item[1]; 
 
-      dataset.push({
-        date : myDate,
-        value : price
+        dataset.push({
+          date : myDate,
+          value : price
+        });
       });
+      return Session.set("lineChartData", dataset);
     });
-
-    return Session.set("quandlList", dataset);
   });
 };
 
@@ -71,12 +87,12 @@ Template.lineChart.rendered = function(){
     .text("Price ($)");
 
   Tracker.autorun(function(){
-    var dataset = Session.get("quandlList");
+    var dataset = Session.get("lineChartData");
 
     if (!dataset) {
       return Meteor.defer(function () {
         console.log("dataset from defer");
-        var dataset = Session.get("quandlList");
+        var dataset = Session.get("lineChartData");
       });
     }
 
