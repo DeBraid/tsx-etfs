@@ -3,23 +3,29 @@
 </head>
 
 <body>
-  <h1>TSX ETFs and Stocks</h1>
-  <h3>by <a href="http://twitter.com/Royal_Arse">@Royal_Arse</a>, of <a href="http://cacheflow.ca">cacheflow.ca</a></h3>
-  <p>Code on <a href="http://github.com/DeBraid/tsx-etfs">Github.</a></p>
-  {{> lineChart}}
+  <div class="container">
+    {{> welcome }}
+    {{> lineChart }}
+  </div>
 </body>
 
+<template name="welcome">
+  <div class="row">
+    <h1>TSX ETFs and Stocks</h1>
+    <h3>by <a href="http://twitter.com/Royal_Arse">@Royal_Arse</a>, of <a href="http://cacheflow.ca">cacheflow.ca</a></h3>
+    <p>Code on <a href="http://github.com/DeBraid/tsx-etfs">Github.</a></p>
+  </div>
+</template>
+
 <template name="lineChart">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-6">
-        <h4>Line Chart </h4>
-        <svg id="lineChart">
-        </svg>
-      </div>
-      <div class="col-sm-3">
-        Search a TSX listed Stock: <input id="ticker-search" type="text" value="XIU">
-      </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <h4>Line Chart </h4>
+      <svg id="lineChart">
+      </svg>
+    </div>
+    <div class="col-sm-3">
+      Search a TSX listed Stock: <input id="ticker-search" type="text" value="XIU">
     </div>
   </div>
 </template>
