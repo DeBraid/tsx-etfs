@@ -1,6 +1,29 @@
-Template.lineChart.rendered = function(){
-  //Width and height
+Template.lineChart.created = function () {
+  Meteor.call("getQuandlData", "XIU", function(error, result) {
+    if (error)
+        console.log(error)
+        
+    var rawData = JSON.parse(result.content),
+      response = rawData.data,
+      dataset = [],
+      parseDate = d3.time.format("%Y-%m-%d").parse;
+    
+    response.map(function (item, index) {
+      var myDate = parseDate( item[0] ),
+          price = item[1]; 
 
+      dataset.push({
+        date : myDate,
+        value : price
+      });
+    });
+
+    return Session.set("quandlList", dataset);
+  });
+};
+
+Template.lineChart.rendered = function(){
+  
   var margin = {top: 20, right: 20, bottom: 30, left: 50},
     width = 400 - margin.left - margin.right,
     height = 300 - margin.top - margin.bottom;
