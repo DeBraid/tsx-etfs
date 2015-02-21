@@ -19,13 +19,18 @@
 
 <template name="lineChart">
   <div class="row">
-    <div class="col-sm-6">
-      <h4>Line Chart </h4>
-      <svg id="lineChart">
-      </svg>
+    <div class="col-sm-3">
+      <svg id="lineChart"></svg>
     </div>
     <div class="col-sm-3">
-      Search a TSX listed Stock: <input id="ticker-search" type="text" value="XIU">
+      Type TSX ticker symbol, then <strong>hit enter</strong>: <input id="ticker-search" type="text" value="XIU">
+
+      <h4>Examples: </h4>
+      {{#each TSX }}
+        <span class="ticker-list" style="padding-right: 5px;">
+          {{ this }}
+        </span>
+      {{/each}}
     </div>
   </div>
 </template>

@@ -1,21 +1,26 @@
 Template.lineChart.events({
   'keyup #ticker-search': function (e,t) {
-    var searched = t.find('input').value;
-    if (searched.length > 1) {
-      return Session.set('searchedTicker', searched);
-    };
+    var searched = t.find('input').value; 
+    if  ( e.keyCode == 13 ) {
+      return Session.set('selectedTicker', searched);
+    }
+  }
+});
+
+Template.lineChart.helpers({
+  TSX: function () {
+    return ["BBD-B","R","WEF","CVE","TD","MFC","PD","RY","TLM","PLI","ABX","TCK-B","PWT","YRI","SLF","RIO","SGY","ECA","G","LTS","TA","BXE","ELD","COS","CPG","SU","LEG","CR","CM","BTO","ERF","CNQ","TXG","BNK","HSE","TCW","BNS","BB","IMG","BCE","BTE","FM","LSG","LUN","BMO","PRE","K","CRH","EDV","WCP","TGZ","CIX","DGC","NGD","TRP","SNC","SJR-B","MMT","BAM-A","T","INN-UN","FTT","ENB","NA","AC","SVC","SMF","PRW","ATD-B","IPL","CHP-UN","MEG","KEL","FTS","AEM","NKO","STB","CAE","TRI","DTX","HBM","CHR-B","PGF","TRQ","PSK","IMO","OGC","CNR","ATH","POT","MND","PPY","PPL","CCO","HNL","LRE","DPM","POW","S","GWO"];
   }
 });
 
 Template.lineChart.created = function () {
   
   Tracker.autorun(function () {
-    if (Session.get('searchedTicker')) {
-      var ticker = Session.get('searchedTicker');
-    } else{
-      var ticker = "XIU"
-    };
+    var ticker,
+        data = Session.get('selectedTicker');
     
+     data ? ticker = data : ticker = "XIU";
+
     Meteor.call("getQuandlData", ticker , function(error, result) {
       if (error)
           console.log(error)
