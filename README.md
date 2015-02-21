@@ -1,6 +1,6 @@
 # TSX ETFs
 
-### by Derek Braid [@Royal_Arse][http://twitter.com/Royal_Arse] 
+### by Derek Braid [@Royal_Arse](http://twitter.com/Royal_Arse) 
 
 A Meteor JS application for financial data.  
 
