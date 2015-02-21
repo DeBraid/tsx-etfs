@@ -1,0 +1,23 @@
+<head>
+  <title>TSX ETFs</title>
+</head>
+
+<body>
+  <h1>TSX ETFs</h1>
+  {{> lineChart}}
+</body>
+
+<template name="lineChart">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-3">
+        <h4>Line Chart </h4>
+        <svg id="lineChart">
+        </svg>
+      </div>
+      <div class="col-sm-3">
+        <input type="button" id="randomize" value="Randomize Values" />
+      </div>
+    </div>
+  </div>
+</template>
