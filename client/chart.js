@@ -64,8 +64,8 @@ Template.lineChart.created = function () {
 Template.lineChart.rendered = function(){
   
   var margin = {top: 20, right: 20, bottom: 30, left: 35},
-    width = 333 - margin.left - margin.right,
-    height = 350 - margin.top - margin.bottom;
+    width = 450 - margin.left - margin.right,
+    height = 400 - margin.top - margin.bottom;
 
   // data format: "2015-01-30"
   var x = d3.time.scale()
@@ -114,14 +114,10 @@ Template.lineChart.rendered = function(){
     var dataset = Session.get("lineChartData");
       Session.set('inputState', 'has-success');
 
-    // $('.input-group').addClass('has-success');
-
     if (!dataset) {
       return Meteor.defer(function () {
         console.log("dataset from defer");
-        // $('.input-group').addClass('has-success');
-      Session.set('inputState', 'has-success');
-
+        Session.set('inputState', 'has-success');
         var dataset = Session.get("lineChartData");
       });
     }
