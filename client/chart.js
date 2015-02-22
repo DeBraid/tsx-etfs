@@ -1,17 +1,19 @@
+startSearch = function ( searched ) {
+  Session.set('selectedTicker', searched);
+  Session.set('inputState', 'has-warning');
+  Session.set('tryAgain', false);
+};
+
 Template.lineChart.events({
   'keyup #ticker-search': function ( e , t ) {
     var searched = t.find('input').value; 
     if ( e.keyCode == 13 ) {
-      Session.set('selectedTicker', searched);
-      Session.set('inputState', 'has-warning');
-      Session.set('tryAgain', false);
+      startSearch( searched );
     }
   },
   'click #get-new-data': function ( e , t ) {
     var searched = t.find('input').value; 
-      Session.set('selectedTicker', searched);
-      Session.set('inputState', 'has-warning');
-      Session.set('tryAgain', false);
+      startSearch( searched );
   }
 });
 
@@ -126,13 +128,13 @@ Template.lineChart.rendered = function(){
   Tracker.autorun(function(){
     console.log("dataset tracker");
     var dataset = Session.get("lineChartData");
-      Session.set('inputState', 'has-success');
+    Session.set('inputState', 'has-success');
 
     if (!dataset) {
       return Meteor.defer(function () {
-        console.log("dataset from defer");
-        Session.set('inputState', 'has-success');
         var dataset = Session.get("lineChartData");
+        Session.set('inputState', 'has-success');
+        console.log("dataset from defer");
       });
     }
 
