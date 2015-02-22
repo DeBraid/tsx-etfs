@@ -4,6 +4,6 @@ Template.tickerInfo.helpers({
   }
 });
 
-UI.registerHelper('tryAgain', function (argument) {
+UI.registerHelper("tryAgain", function () {
   return Session.get("tryAgain");
 });

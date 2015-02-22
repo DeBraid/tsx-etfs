@@ -4,12 +4,14 @@ Template.lineChart.events({
     if ( e.keyCode == 13 ) {
       Session.set('selectedTicker', searched);
       Session.set('inputState', 'has-warning');
+      Session.set('tryAgain', false);
     }
   },
   'click #get-new-data': function ( e , t ) {
     var searched = t.find('input').value; 
-      Session.set('inputState', 'has-warning');
       Session.set('selectedTicker', searched);
+      Session.set('inputState', 'has-warning');
+      Session.set('tryAgain', false);
   }
 });
 
@@ -49,23 +51,25 @@ Template.lineChart.created = function () {
         response = JSON.parse(result.content),
         respDataArr = response.data;
 
-        tickerAttrs = {
+        Session.set('tickerInfo', {
           name : response.name,
           source : response.source_name,
           description : response.description,
           urlize_name : response.urlize_name
-        };
+        });
       
 
       respDataArr.map(function (item, index) {
         var myDate = parseDate( item[0] ),
             price = item[1]; 
+        
         priceDataPoints.push({
           date : myDate,
           value : price
-        });
+        })
+
       });
-      Session.set('tickerInfo', tickerAttrs);
+
       return Session.set("lineChartData", priceDataPoints);
     });
   });

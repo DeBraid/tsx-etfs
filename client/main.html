@@ -59,11 +59,11 @@
 
 <template name="waiting">
   {{#if waitingIs }}
-    {{> spinner}}
       {{#if tryAgain }}
-        <h5>Error: ticker not found.</h5>
+        {{> tickerNotFound }}
       {{ else }}
-        <h5>Retry after 5 seconds</h5>
+        {{> spinner}}
+        <h5>Wait for it ... </h5>
       {{/if }}
     {{ else }}
     <h5>Type ticker symbol, hit enter:</h5>
@@ -77,11 +77,15 @@
 <template name="tickerInfo">
   {{#with tickerInfo }}
     {{#if tryAgain }}
-      <h1>Error: try a new ticker</h1>
+      {{> tickerNotFound }}
       {{ else }}
       <h3>{{ tickerInfo.name }}</h3>
       <p>{{ tickerInfo.description }}</p>
       <aside>Source: {{ tickerInfo.source }} via <a href="https://www.quandl.com" target="_blank">Quandl</a></aside>
     {{/if}}
   {{/with}}
+</template>
+
+<template name="tickerNotFound">
+  <h3>Error: ticker not found.</h3>
 </template>
