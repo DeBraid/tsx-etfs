@@ -39,7 +39,7 @@ Template.lineChart.created = function () {
     
      data ? ticker = data : ticker = "XIU";
 
-    Meteor.call("getQuandlData", ticker , function(error, result) {
+    Meteor.call("getQuandlData", ticker.toUpperCase() , function(error, result) {
       if (error)
           console.log(error)
           

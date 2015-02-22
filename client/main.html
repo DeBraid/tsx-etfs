@@ -52,9 +52,9 @@
 </template>
 
 <template name="waiting">
-  {{#if waitingIs "true"}}
-    <h5>Retry if red for 5 seconds </h5>
+  {{#if waitingIs "false"}}
     {{> spinner}}
+    <h5>Retry if red for 5 seconds </h5>
     {{ else }}
     <h5>Type ticker symbol, hit enter:</h5>
   {{/if}}

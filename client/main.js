@@ -9,15 +9,15 @@ Template.waiting.helpers({
 
 Template.waiting.created = function () {
   Meteor.Spinner.options = {
-    lines: 8, // The number of lines to draw
-    length: 8, // The length of each line
+    lines: 15, // The number of lines to draw
+    length: 5, // The length of each line
     width: 2, // The line thickness
-    radius: 10, // The radius of the inner circle
+    radius: 5, // The radius of the inner circle
     corners: 1, // Corner roundness (0..1)
     rotate: 0.5, // The rotation offset
     direction: 1, // 1: clockwise, -1: counterclockwise
     color: '#F00', // #rgb or #rrggbb
-    speed: 0.8, // Rounds per second
+    speed: 0.5, // Rounds per second
     trail: 60, // Afterglow percentage
     shadow: true, // Whether to render a shadow
     hwaccel: false, // Whether to use hardware acceleration
