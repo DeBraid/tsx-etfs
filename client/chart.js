@@ -25,7 +25,9 @@ Template.lineChart.helpers({
     return XIU.find();
   },
   inputState: function () {
-    return Session.get('inputState');
+    return {
+      klass: Session.get('inputState')
+    }
   }
 });
 

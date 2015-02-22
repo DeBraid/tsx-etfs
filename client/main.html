@@ -27,7 +27,7 @@
     </div>
     <div class="col-sm-4">    
       {{#with inputState }}
-      <div class="input-group add-on {{ this }}">
+      <div class="input-group add-on {{ this.klass }}">
           <input type="text" class="form-control" placeholder="Enter ticker symbol" name="ticker" id="ticker-search">
         <div id="get-new-data" class="input-group-btn">
           <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>

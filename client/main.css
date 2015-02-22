@@ -14,3 +14,13 @@
   stroke: steelblue;
   stroke-width: 1.5px;
 }
+
+.has-success .form-control:focus {
+  border-color: #2B542C;
+  box-shadow: inset 5px 10px 20px rgba(0, 0, 0, 0.075), 0 0 34px green;
+}
+
+.has-warning .form-control:focus {
+  border-color: #2B542C;
+  box-shadow: inset 5px 10px 20px rgba(0, 0, 0, 0.075), 0 0 34px red;
+}
