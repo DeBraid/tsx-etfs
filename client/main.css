@@ -1,3 +1,7 @@
+h1, h3, h4 {
+  color: #324684;
+}
+
 #lineChart .axis path,
 #lineChart .axis line {
   fill: none;
@@ -11,7 +15,7 @@
 
 #lineChart .line {
   fill: none;
-  stroke: steelblue;
+  stroke: #324684;
   stroke-width: 1.5px;
 }
 
@@ -21,6 +25,6 @@
 }
 
 .has-warning .form-control:focus {
-  border-color: #2B542C;
+  border-color: red;
   box-shadow: inset 5px 10px 20px rgba(0, 0, 0, 0.075), 0 0 34px red;
 }

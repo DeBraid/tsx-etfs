@@ -14,8 +14,8 @@
   <div class="row">
    <div class="col-sm-12">
      <h1>TSX ETFs and Stocks</h1>
-    <h3>by <a href="http://twitter.com/Royal_Arse">@Royal_Arse</a> of <a href="http://cacheflow.ca">cacheflow.ca</a></h3>
-    <p>Code on <a href="http://github.com/DeBraid/tsx-etfs">Github.</a></p>
+    <h4>by <a href="http://twitter.com/Royal_Arse">@Royal_Arse</a> of <a href="http://cacheflow.ca">cacheflow.ca</a></h4>
+    <p>Code on <a href="http://github.com/DeBraid/tsx-etfs">Github</a></p>
    </div> 
   </div>
 </template>
@@ -26,7 +26,9 @@
       <svg id="lineChart"></svg>
     </div>
     <div class="col-sm-5">    
+      {{> waiting}}
       {{#with inputState }}
+
       <div class="input-group add-on {{ this.klass }}">
           <input type="text" class="form-control" placeholder="Enter ticker symbol" name="ticker" id="ticker-search">
         <div id="get-new-data" class="input-group-btn">
@@ -37,11 +39,11 @@
     
       {{#with tickers }}      
         <h3>ETFs</h3>
-        {{#each this.etfs}}
+        {{#each tickers.etfs}}
           <span class="ticker-list" style="padding-right: 5px;">{{ this }}</span>
         {{/each }}
         <h3>Stocks</h3>
-        {{#each this.stocks}}
+        {{#each tickers.stocks}}
           <span class="ticker-list" style="padding-right: 5px;">{{ this }}</span>
         {{/each }}
       {{/with}}
@@ -49,3 +51,11 @@
   </div>
 </template>
 
+<template name="waiting">
+  {{#if waitingIs "true"}}
+    <h5>Retry if red for 5 seconds </h5>
+    {{> spinner}}
+    {{ else }}
+    <h5>Type ticker symbol, hit enter:</h5>
+  {{/if}}
+</template>
