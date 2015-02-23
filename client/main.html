@@ -71,7 +71,14 @@
 </template>
 
 <template name="tickerList">
-  <span class="ticker-list" style="padding-right: 5px;">{{ this }}</span>
+  <button type="button" 
+          id="{{ this }}" 
+          class="ticker btn btn-xs btn-default ">
+
+            {{ this }}
+
+  </button>
+  
 </template>
 
 <template name="tickerInfo">

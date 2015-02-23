@@ -53,14 +53,13 @@ Template.lineChart.created = function () {
         response = JSON.parse(result.content),
         respDataArr = response.data;
 
-        Session.set('tickerInfo', {
-          name : response.name,
-          source : response.source_name,
-          description : response.description,
-          urlize_name : response.urlize_name
-        });
-      
-
+      Session.set('tickerInfo', {
+        name : response.name,
+        source : response.source_name,
+        description : response.description,
+        urlize_name : response.urlize_name
+      });
+  
       respDataArr.map(function (item, index) {
         var myDate = parseDate( item[0] ),
             price = item[1]; 
@@ -69,9 +68,7 @@ Template.lineChart.created = function () {
           date : myDate,
           value : price
         })
-
       });
-
       return Session.set("lineChartData", priceDataPoints);
     });
   });
