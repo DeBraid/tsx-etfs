@@ -1,14 +1,18 @@
 <head>
-  <title>TSX ETF and Stocks</title>
+  <title>TSX Quotes</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 </head>
 
 <body>
+  <!-- {{> yield "layout"}}   -->
+</body>
+
+<template name="layout">
   <div class="container">
     {{> welcome }}
     {{> lineChart }}
   </div>
-</body>
+</template>
 
 <template name="welcome">
   <div class="row">
@@ -78,10 +82,12 @@
 </template>
 
 <template name="tickerList">
+
   <button type="button" 
           id="{{ this }}" 
           class="ticker btn btn-xs btn-default ">
             {{ this }}
+            <!-- <a href="{{pathFor 'chart' hash=this }}">{{ this }}</a> -->
   </button>
 </template>
 

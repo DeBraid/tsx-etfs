@@ -6,7 +6,6 @@ Template.tickerInfo.helpers({
 
 Template.tickerList.events({
   'click .ticker': function (e , t) {
-    console.log("e.target.id", e.target.id);
     var clickedTicker = e.target.id;
     startSearch( clickedTicker );
   }
