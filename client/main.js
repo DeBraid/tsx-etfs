@@ -1,6 +1,18 @@
 Template.tickerInfo.helpers({
   tickerInfo: function () {
     return Session.get("tickerInfo");
+  },
+  showFullDescription : function () {
+    return Session.get('showFullDescription');
+  } 
+});
+
+Template.tickerInfo.events({
+  'click #show-full-description' : function () {
+    return Session.set('showFullDescription', true);
+  },
+  'click #hide-full-description' : function () {
+    return Session.set('showFullDescription', false);
   }
 });
 

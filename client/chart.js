@@ -59,8 +59,7 @@ Template.lineChart.created = function () {
       Session.set('tickerInfo', {
         name : response.name,
         source : response.source_name,
-        description : response.description,
-        urlize_name : response.urlize_name
+        description : response.description
       });
   
       respDataArr.map(function (item, index) {
@@ -79,12 +78,14 @@ Template.lineChart.created = function () {
 
 Template.lineChart.rendered = function(){
   // var margin = {top: 20, right: 20, bottom: 30, left: 35},
-  var margin = {top: 10, right: 10, bottom: 25, left: 30},
-    width = parseInt(d3.select("#line-chart-container").style("width")) - margin.top,
-    // width = 450 - margin.left - margin.right,
-    height = 400 - margin.top - margin.bottom;
+  var margin = {top: 15, right: 10, bottom: 30, left: 30},
+    width = parseInt(d3.select("#line-chart-container").style("width")) - margin.bottom - margin.left*1.5,
+    height;
+    
+    ( width > 480 ) ? height = 400 - margin.top - margin.bottom : height = 270 - margin.top - margin.bottom;
+    
 
-    console.log(width);
+    console.log(width, "WxH", height );
 
   // data format: "2015-01-30"
   var x = d3.time.scale()
@@ -110,10 +111,8 @@ Template.lineChart.rendered = function(){
     });
 
   var svg = d3.select("#lineChart")
-    .attr("width", width + margin.left + margin.right)
+    .attr("width", width + margin.left + margin.top)
     .attr("height", height + margin.top + margin.bottom)
-    .attr("viewBox", "0 0 " + (width + margin.top*2) + " " + height)
-    .attr("preserveAspectRatio", "xMinYMin")
     .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
