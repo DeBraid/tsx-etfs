@@ -24,3 +24,11 @@ You reference these settings using `keyName` in `server.js`:
 ```javascript
 var someTokenAuthKey = Meteor.settings.keyName;
 ```
+
+## TO DO: 
+
+* responsive charts
+* candlestick charts ( d3 chart on hand )
+* login / sign up (install package, routes , views)
+* landing page (routes, views)
+*  
