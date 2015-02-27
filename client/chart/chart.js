@@ -44,6 +44,7 @@ Template.chart.helpers({
     return Session.get('chartType');
   }
 });
+
 Template.chart.created = function () {
     Tracker.autorun(function () {
     var ticker,
@@ -96,7 +97,6 @@ Template.chart.rendered = function(){
     height;
     
     ( width > 480 ) ? height = 400 - margin.top - margin.bottom : height = 270 - margin.top - margin.bottom;
-    
 
     console.log(width, "WxH", height );
 
