@@ -39,11 +39,13 @@ Template.chart.helpers({
     return {
       klass: Session.get('inputState')
     }
+  }, 
+  chartType: function () {
+    return Session.get('chartType');
   }
 });
-
 Template.chart.created = function () {
-  Tracker.autorun(function () {
+    Tracker.autorun(function () {
     var ticker,
         data = Session.get('selectedTicker');
     
@@ -58,27 +60,31 @@ Template.chart.created = function () {
       }
           
     var parseDate = d3.time.format("%Y-%m-%d").parse, 
-        priceDataPoints = [],
+        candleChartData = [],
         tickerAttrs = {},
         response = JSON.parse(result.content),
         respDataArr = response.data;
 
-      Session.set('tickerInfo', {
-        name : response.name,
-        source : response.source_name,
-        description : response.description
-      });
+        Session.set('tickerInfo', {
+          name : response.name,
+          source : response.source_name,
+          description : response.description
+        });
   
       respDataArr.map(function (item, index) {
-        var myDate = parseDate( item[0] ),
-            closingPrice = item[4]; 
-        
-        priceDataPoints.push({
-          date : myDate,
-          value : closingPrice
+        var myDate = parseDate( item[0] );
+        /*  0: "Date", 1: "Open", 2: "High", 3: "Low", 
+            4: "Close", 5: "Volume", 6: "Adjusted Close" */    
+        candleChartData.push({
+          date : myDate ,
+          open : item[1],
+          close : item[4] ,
+          high : item[2],
+          low : item[3]        
         })
       });
-      return Session.set("lineChartData", priceDataPoints);
+      
+      return Session.set("chartData", candleChartData);
     });
   });
 };
@@ -114,7 +120,7 @@ Template.chart.rendered = function(){
       return x(d.date);
     })
     .y(function(d) {
-      return y(d.value);
+      return y(d.close);
     });
 
   var svg = d3.select("#chart")
@@ -141,12 +147,12 @@ Template.chart.rendered = function(){
 
   Tracker.autorun(function(){
     console.log("dataset tracker");
-    var dataset = Session.get("lineChartData");
+    var dataset = Session.get("chartData");
     Session.set('inputState', 'has-success');
 
     if (!dataset) {
       return Meteor.defer(function () {
-        var dataset = Session.get("lineChartData");
+        var dataset = Session.get("chartData");
         Session.set('inputState', 'has-success');
         console.log("dataset from defer");
       });
@@ -156,7 +162,7 @@ Template.chart.rendered = function(){
       .data([dataset]); //todo - odd syntax here - should use a key function, but can't seem to get that working
 
     x.domain(d3.extent(dataset, function(d) { return d.date; }));
-    y.domain(d3.extent(dataset, function(d) { return d.value; }));
+    y.domain(d3.extent(dataset, function(d) { return d.close; }));
 
     //Update X axis
     svg.select(".x.axis")
