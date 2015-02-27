@@ -1,0 +1,22 @@
+<template name="tickerList">
+  <button type="button" 
+          id="{{ this }}" 
+          class="ticker btn btn-xs btn-default">{{ this }}
+  </button>
+</template>
+
+<template name="tickerInfo">
+  {{#with tickerInfo }}
+    {{#if tryAgain }}
+      {{> tickerNotFound }}
+    {{ else }}
+      <h3 id="show-full-description" style="cursor:pointer;">{{ tickerInfo.name }}</h3>
+      {{#if showFullDescription }}
+        <p>{{ tickerInfo.description }}</p>
+        <button id="hide-full-description" class="btn btn-xs btn-danger pull-left"> Hide </button>
+        {{ else }}
+        <button id="show-full-description" class="btn btn-xs btn-success pull-left">Show Description</button>          
+      {{/if}}
+    {{/if}}
+  {{/with}}
+</template>

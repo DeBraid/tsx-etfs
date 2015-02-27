@@ -1,0 +1,12 @@
+<template name="waiting">
+  {{#if waitingIs }}
+    {{#if tryAgain }}
+      {{> tickerNotFound }}
+    {{ else }}
+      {{> spinner}}
+      <h5>Wait for it ... </h5>
+    {{/if }}
+  {{ else }}
+    <h5>Type ticker symbol, hit enter:</h5>
+  {{/if}}
+</template>
