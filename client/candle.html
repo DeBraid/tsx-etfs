@@ -1,22 +1,4 @@
-<head>
-  <title>TSX Quotes</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-</head>
-
-<body>
-  <!-- {{> yield "layout"}}   -->
-</body>
-
-<template name="welcome">
-  <div class="row">
-   <div class="col-sm-12">
-    <h1>TSX ETFs and Stocks</h1>
-    <h4>by <a href="http://twitter.com/Royal_Arse">@Royal_Arse</a> of <a href="http://cacheflow.ca">cacheflow.ca</a></h4>
-   </div> 
-  </div>
-</template>
-
-<template name="chart">
+<template name="candleChart">
   <div class="row">
     <div id="chart-container" class="col-sm-7">
       {{> tickerInfo }}
@@ -45,8 +27,4 @@
       {{/each}}
     </div>
   </div>
-</template>
-
-<template name="tickerNotFound">
-  <h3>Error: ticker not found.</h3>
 </template>

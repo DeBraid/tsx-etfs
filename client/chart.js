@@ -7,7 +7,7 @@ startSearch = function ( searched ) {
   window.document.title = "TSX Quotes: " + searched;
 };
 
-Template.lineChart.events({
+Template.chart.events({
   'keyup #ticker-search': function ( e , t ) {
     var searched = t.find('input').value; 
     if ( e.keyCode == 13 ) {
@@ -20,7 +20,7 @@ Template.lineChart.events({
   }
 });
 
-Template.lineChart.helpers({
+Template.chart.helpers({
   tickers: function () {
     return [
       { 
@@ -42,7 +42,7 @@ Template.lineChart.helpers({
   }
 });
 
-Template.lineChart.created = function () {
+Template.chart.created = function () {
   Tracker.autorun(function () {
     var ticker,
         data = Session.get('selectedTicker');
@@ -71,11 +71,11 @@ Template.lineChart.created = function () {
   
       respDataArr.map(function (item, index) {
         var myDate = parseDate( item[0] ),
-            price = item[1]; 
+            closingPrice = item[4]; 
         
         priceDataPoints.push({
           date : myDate,
-          value : price
+          value : closingPrice
         })
       });
       return Session.set("lineChartData", priceDataPoints);
@@ -83,10 +83,10 @@ Template.lineChart.created = function () {
   });
 };
 
-Template.lineChart.rendered = function(){
+Template.chart.rendered = function(){
   // var margin = {top: 20, right: 20, bottom: 30, left: 35},
   var margin = {top: 15, right: 10, bottom: 30, left: 30},
-    width = parseInt(d3.select("#line-chart-container").style("width")) - margin.bottom - margin.left*1.5,
+    width = parseInt(d3.select("#chart-container").style("width")) - margin.bottom - margin.left*1.5,
     height;
     
     ( width > 480 ) ? height = 400 - margin.top - margin.bottom : height = 270 - margin.top - margin.bottom;
@@ -117,7 +117,7 @@ Template.lineChart.rendered = function(){
       return y(d.value);
     });
 
-  var svg = d3.select("#lineChart")
+  var svg = d3.select("#chart")
     .attr("width", width + margin.left + margin.top)
     .attr("height", height + margin.top + margin.bottom)
     .append("g")

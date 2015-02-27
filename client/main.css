@@ -2,18 +2,18 @@ h1, h3, h4 {
   color: #324684;
 }
 
-#lineChart .axis path,
-#lineChart .axis line {
+#chart .axis path,
+#chart .axis line {
   fill: none;
   stroke: #000;
   shape-rendering: crispEdges;
 }
 
-#lineChart .x.axis path {
+#chart .x.axis path {
   display: none;
 }
 
-#lineChart .line {
+#chart .line {
   fill: none;
   stroke: #324684;
   stroke-width: 1.5px;
