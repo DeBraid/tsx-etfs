@@ -1,12 +1,3 @@
-startSearch = function ( searched ) {
-  Session.set('selectedTicker', searched);
-  Session.set('inputState', 'has-warning');
-  Session.set('tryAgain', false);
-  Router.go('/chart/' + searched );
-  $('input#ticker-search').val(searched);
-  window.document.title = "TSX Quotes: " + searched;
-};
-
 Template.chart.events({
   'keyup #ticker-search': function ( e , t ) {
     var searched = t.find('input').value; 
@@ -73,9 +64,7 @@ Template.chart.created = function () {
         });
   
       respDataArr.map(function (item, index) {
-        if (index < 50) {
-
-
+        if (index < 30) {
         var myDate = parseDate( item[0] );
         /*  0: "Date", 1: "Open", 2: "High", 3: "Low", 
             4: "Close", 5: "Volume", 6: "Adjusted Close" */    
@@ -96,13 +85,12 @@ Template.chart.created = function () {
 
 Template.chart.rendered = function(){
   // var margin = {top: 20, right: 20, bottom: 30, left: 35},
-  var margin = {top: 15, right: 10, bottom: 30, left: 30},
+  var margin = {top: 15, right: 10, bottom: 30, left: 40},
     width = parseInt(d3.select("#chart-container").style("width")) - margin.bottom - margin.left*1.5,
     height;
     
-    ( width > 480 ) ? height = 400 - margin.top - margin.bottom : height = 270 - margin.top - margin.bottom;
-
-    console.log(width, "WxH", height );
+  ( width > 480 ) ? height = 400 - margin.top - margin.bottom : height = 270 - margin.top - margin.bottom;
+  console.log(width, "WxH", height );
 
   // data format: "2015-01-30"
   var x = d3.time.scale()
@@ -118,14 +106,6 @@ Template.chart.rendered = function(){
   var yAxis = d3.svg.axis()
     .scale(y)
     .orient("left");
-
-  // var line = d3.svg.line()
-  //   .x(function(d) {
-  //     return x(d.date);
-  //   })
-  //   .y(function(d) {
-  //     return y(d.close);
-  //   });
 
    var svg = d3.select("#chart")
     .attr("width", width + margin.left + margin.top)
@@ -146,6 +126,15 @@ Template.chart.rendered = function(){
     .style("text-anchor", "end")
     .text("Price ($)");
 
+  svg.append("g")
+    .attr("class", "candle");
+
+  var candles = svg.selectAll("g.candle");
+
+  // svg.append("g")
+  //   .attr("class", "candlebody");
+  // var candleBody = svg.selectAll("g.candlebody");
+  // var candles = svg.selectAll(".candle.candlestick.candlebody");
 
   Tracker.autorun(function(){
     console.log("dataset tracker");
@@ -160,12 +149,23 @@ Template.chart.rendered = function(){
       });
     }
 
-
+    var _X = width/dataset.length*0.5;
     x.domain(d3.extent(dataset, function(d) { return d.date; }));
     y.domain(d3.extent(dataset, function(d) { return d.close; }));
 
-    var paths = svg.selectAll("path.line")
-      .data([dataset]); //todo - odd syntax 
+    // var paths = svg.selectAll("path.line")
+    //   .data([dataset]); //todo - odd syntax 
+    
+    // OPTION 1: contains selectAll
+    var candleGroup = candles.selectAll("g.candle")
+        .data(dataset); // array or key syntax here? 
+    
+    // OPTION 2: straight data-bind
+    // var candleGroup = candles.data(dataset); // array or key syntax here? 
+
+    // OPTION 3: ALL out shit
+    // var candleGroup = candles.selectAll('line.candle').selectAll('rect.candle').data(dataset); // array or key syntax here? 
+    
     //Update X axis
     svg.select(".x.axis")
       .transition()
@@ -177,48 +177,38 @@ Template.chart.rendered = function(){
       .transition()
       .duration(1000)
       .call(yAxis);
-      svg.selectAll("line.candle")
-    .data(dataset)
-    .enter()
-    .append("svg:line")
-    .attr({
-      "class": "candle alt-view",
-      "x1": function(d,i) { return x(d.date);; },
-      "x2": function(d,i) { return x(d.date);; },
-      "y1": function(d,i) { return y(d.high); },
-      "y2": function(d,i) { return y(d.low); },
-      "stroke": "black" 
-    });    
-  var X = width/dataset.length*0.25;
-  svg.selectAll("rect.candle")
-    .data(dataset)
-    .enter()
-    .append("svg:rect")
-    .attr({
-      "class": "candle alt-view",
-      "width": function(d){ return X},
-      "x": function(d,i) { return x(d.date) - X; },
-      "y": function(d,i) { return y(Math.max(d.open, d.close)); },
-      "height": function(d,i) { 
-        return y(Math.min(d.open, d.close)) - y(Math.max(d.open, d.close)); 
-      },
-      "fill": function (d) { return d.open > d.close ? "#dc432c" : "#0CD1AA" },
-      "stroke": "black"
-    });
+
+    candleGroup
+      .enter()
+      .append("line")
+      .attr({
+        "class": "candle candlestick",
+        "x1": function(d,i) { return x(d.date) - _X/2 ; },
+        "x2": function(d,i) { return x(d.date) - _X/2 ; },
+        "y1": function(d,i) { return y(d.high); },
+        "y2": function(d,i) { return y(d.low); },
+        "stroke": "black" 
+      });    
+  
+    candleGroup
+      .enter()
+      .append("rect")
+      .attr({
+        "class": "candle candlebody",
+        "width": function(d){ return _X; },
+        "x": function(d,i) { return x(d.date) - _X; },
+        "y": function(d,i) { return y(Math.max(d.open, d.close)); },
+        "height": function(d,i) { 
+          return y(Math.min(d.open, d.close)) - y(Math.max(d.open, d.close)); 
+        },
+        "fill": function (d) { return d.open > d.close ? "#dc432c" : "#0CD1AA" },
+        "stroke": "black"
+      });
     
-    // paths
-    //   .enter()
-    //   .append("path")
-    //   .attr("class", "line")
-    //   .attr('d', line);
+    candleGroup
+      .exit()
+      .remove();
 
-    // paths
-    //   .attr('d', line); //todo - should be a transisition, but removed it due to absence of key
-      
-    // paths
-    //   .exit()
-    //   .remove();
-
-
+    console.log("passed candles exits");
   });
 };
