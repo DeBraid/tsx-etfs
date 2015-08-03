@@ -2,7 +2,9 @@
 
 ### by Derek Braid [@Royal_Arse](http://twitter.com/Royal_Arse) 
 
-A Meteor JS application for financial data.  
+A Meteor JS application for financial data.
+
+Site is deployed at tsx.meteor.com
 
 * charts with d3js.  
 * data Quandl API to display stock charts.
@@ -11,7 +13,7 @@ A Meteor JS application for financial data.
 
 ```javascript
 {
-  "keyName" : "someRandomKey3s2df14sd098sd4522fa"
+  "keyName" : "someRandomKey3s2df1422fa"
 }
 ```
 
@@ -27,7 +29,7 @@ var someTokenAuthKey = Meteor.settings.keyName;
 
 ## TO DO: 
 
-* responsive charts
+* responsive charts (done! :D )
 * candlestick charts ( d3 chart on hand )
 * login / sign up (install package, routes , views)
 * landing page (routes, views)
