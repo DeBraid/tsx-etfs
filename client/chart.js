@@ -1,10 +1,11 @@
 startSearch = function ( searched ) {
   Session.set('selectedTicker', searched);
   Session.set('inputState', 'has-warning');
+  console.log('tryAgain false');
   Session.set('tryAgain', false);
   Router.go('/chart/' + searched );
   $('input#ticker-search').val(searched);
-  window.document.title = "TSX Quotes: " + searched;
+  // window.document.title = "TSX Quotes: " + searched;
 };
 
 Template.lineChart.events({
@@ -54,6 +55,7 @@ Template.lineChart.created = function () {
           console.log(error);
           return Session.set('tryAgain', true);
       } else {
+        console.log('try again false!');
         Session.set('tryAgain', false);
       }
           
@@ -78,6 +80,7 @@ Template.lineChart.created = function () {
           value : price
         })
       });
+      Session.set('inputState', 'has-success');
       return Session.set("lineChartData", priceDataPoints);
     });
   });
@@ -90,9 +93,6 @@ Template.lineChart.rendered = function(){
     height;
     
     ( width > 480 ) ? height = 400 - margin.top - margin.bottom : height = 270 - margin.top - margin.bottom;
-    
-
-    console.log(width, "WxH", height );
 
   // data format: "2015-01-30"
   var x = d3.time.scale()
@@ -142,7 +142,7 @@ Template.lineChart.rendered = function(){
   Tracker.autorun(function(){
     console.log("dataset tracker");
     var dataset = Session.get("lineChartData");
-    Session.set('inputState', 'has-success');
+    
 
     if (!dataset) {
       return Meteor.defer(function () {
@@ -182,5 +182,7 @@ Template.lineChart.rendered = function(){
     paths
       .exit()
       .remove();
+
+      return Session.set('inputState', 'has-success');
   });
 };

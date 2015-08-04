@@ -1,3 +1,5 @@
 UI.registerHelper("tryAgain", function () {
-  return Session.get("tryAgain");
+  Tracker.autorun(function () {
+  	return Session.get("tryAgain");
+  });
 });

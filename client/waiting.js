@@ -1,7 +1,8 @@
 Template.waiting.helpers({
   waitingIs: function () {
     var loading = Session.get('inputState');
-    return loading == 'has-success' ? false : true ; 
+    console.log('loading state: ', loading);
+    return loading == 'has-success' ? false : true; 
   }
 });
 
