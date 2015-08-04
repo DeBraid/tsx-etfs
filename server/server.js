@@ -14,3 +14,8 @@ Meteor.methods({
     return Meteor.http.get( url + authKey );
   }  
 });
+
+
+Meteor.publish('etfs', function () {
+	return Etfs.find();
+});

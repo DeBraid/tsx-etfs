@@ -6,9 +6,16 @@ Router.configure({
 Router.map(function () {
   this.route('chart', { 
     path: '/chart/:ticker',
+      subscriptions: function () {
+        return Meteor.subscribe('etfs');
+      },
       data: function() {  
         Meteor.call('startSearch', this.params.ticker);
-    }
+        return {
+          tickers: Etfs.find()
+        }
+      }
+
   });
 });
 
@@ -25,7 +32,7 @@ Router.onAfterAction(function() {
             'twitter:creator' : '@Royal_Arse',
             'twitter:title' : 'Chart of ' + ticker.name + '',
             'twitter:description' : '' + ticker.description + '',
-            'twitter:image' : 'http://imgur.com/gallery/lFOj8oz'
+            'twitter:image' : 'tsx-chart-ss.png'
         },
         og: {
             'image': 'http://static01.nyt.com/images/2015/08/04/world/04BURUNDI/04BURUNDI-master675.jpg' 

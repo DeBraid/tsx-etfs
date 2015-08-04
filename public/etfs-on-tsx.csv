@@ -1,0 +1,230 @@
+ticker,q_code,name
+ASD,YAHOO/TSX_ASD_TO,Horizons Australian Dollar Currency ETF
+CAB,YAHOO/TSX_CAB_A_TO,Claymore Adv Cdn Bond ETF
+CAB,YAHOO/TSX_CAB_TO,Claymore Adv Canadian Bond ETF
+CBD,YAHOO/TSX_CBD_A_TO,Claymore Balanced Income Core ETF
+CBD,YAHOO/TSX_CBD_TO,Claymore Balanced Income Core ETF
+CBH,YAHOO/TSX_CBH_A_TO,Claymore 1-10 Yr Ladder Corp Bond ETF
+CBH,YAHOO/TSX_CBH_TO,Claymore 1-10 Yr Laddered Corp Bond ETF
+CBN,YAHOO/TSX_CBN_A_TO,Claymore Balanced Growth Core ETF
+CBN,YAHOO/TSX_CBN_TO,Claymore Balanced Growth Core ETF
+CBO,YAHOO/TSX_CBO_A_TO,Claymore 1-5Yr Ladder Corp. Bd ETF
+CBO,YAHOO/TSX_CBO_TO,Claymore 1-5Yr Laddered Corp. Bond ETF
+CBQ,YAHOO/TSX_CBQ_A_TO,Claymore BRIC ETF
+CBQ,YAHOO/TSX_CBQ_TO,Claymore BRIC ETF
+CBR,YAHOO/TSX_CBR_A_TO,Claymore Broad Commodity ETF
+CBR,YAHOO/TSX_CBR_TO,Claymore Broad Commodity ETF
+CDZ,YAHOO/TSX_CDZ_A_TO,Claymore Sp TSX Cdn Dividend ETF
+CDZ,YAHOO/TSX_CDZ_TO,Claymore Sp TSX Cdn Dividend ETF
+CEW,YAHOO/TSX_CEW_TO,Claymore Equal Weight Banc & Lifco ETF
+CGL,YAHOO/TSX_CGL_C_TO,Claymore Gold Bullion ETF
+CGL,YAHOO/TSX_CGL_TO,Claymore Gold Bullion ETF
+CGR,YAHOO/TSX_CGR_A_TO,Claymore Global Real Estate ETF
+CGR,YAHOO/TSX_CGR_TO,Claymore Global Real Estate ETF
+CHB,YAHOO/TSX_CHB_A_TO,Claymore Advantaged HY Bond ETF
+CHB,YAHOO/TSX_CHB_TO,Claymore Advantaged HY Bond ETF
+CHI,YAHOO/TSX_CHI_A_TO,Claymore China ETF
+CHI,YAHOO/TSX_CHI_TO,Claymore China ETF
+CIB,YAHOO/TSX_CIB_TO,Claymore Inverse 10 Yr Govt Bond ETF
+CIF,YAHOO/TSX_CIF_TO,Claymore Global Infrastructure ETF
+CJP,YAHOO/TSX_CJP_TO,Claymore Japan Fund Idx ETF
+CLF,YAHOO/TSX_CLF_A_TO,Claymore 1-5 Yr Ladder Gov T Bond ETF
+CLF,YAHOO/TSX_CLF_TO,Claymore 1-5 Yr Ladder Gov T Bond ETF
+CLG,YAHOO/TSX_CLG_A_TO,Claymore 1-10 Yr Ladder Govt Bond ETF
+CLG,YAHOO/TSX_CLG_TO,Claymore 1-10 Yr Ladder Govt Bond ETF
+CMF,YAHOO/TSX_CMF_TO,Claymore Managed Futures ETF
+CMR,YAHOO/TSX_CMR_TO,Claymore Premium Money Market ETF
+CMW,YAHOO/TSX_CMW_A_TO,Claymore S&P/Tsx Glbl Mining ETF
+CMW,YAHOO/TSX_CMW_TO,Claymore S&P/Tsx Glbl Mining ETF
+COW,YAHOO/TSX_COW_A_TO,Claymore Global Agr Etf
+COW,YAHOO/TSX_COW_TO,Claymore Global Agr ETF
+CPD,YAHOO/TSX_CPD_A_TO,Claymore S&P/Tsx Cdn Pref Share ETF
+CPD,YAHOO/TSX_CPD_TO,Claymore S&P/Tsx Cdn Pref Share ETF
+CSD,YAHOO/TSX_CSD_A_TO,Claymore Adv Sh Duration Hi Inc ETF
+CSD,YAHOO/TSX_CSD_TO,Claymore Adv Short Duration Hi Inc ETF
+CUD,YAHOO/TSX_CUD_A_TO,Claymore Sp US Div Growers ETF
+CUD,YAHOO/TSX_CUD_TO,Claymore Sp US Div Growers ETF
+CVD,YAHOO/TSX_CVD_A_TO,Claymore Adv Convert Bond ETF
+CVD,YAHOO/TSX_CVD_TO,Claymore Adv Convert Bond ETF
+CWO,YAHOO/TSX_CWO_A_TO,Claymore Broad Emerging Mkt ETF
+CWO,YAHOO/TSX_CWO_TO,Claymore Broad Emerging Mkt ETF
+CWW,YAHOO/TSX_CWW_A_TO,Claymore S&P Global Water ETF
+CWW,YAHOO/TSX_CWW_TO,Claymore S&P Global Water ETF
+CXF,YAHOO/TSX_CXF_A_TO,Cdn Convert Liquid Univ ETF
+CXF,YAHOO/TSX_CXF_TO,Cdn Convert Liquid Universe ETF
+CYH,YAHOO/TSX_CYH_A_TO,Claymore Glbl Monthly Adv Div ETF
+CYH,YAHOO/TSX_CYH_TO,Claymore Glbl Monthly Advantaged Div ETF
+DLR,YAHOO/TSX_DLR_TO,Horizons US Dollar Currency ETF
+DXM,YAHOO/TSX_DXM_A_TO,XTF Morningstar Cda Div Tgt 30 AC ETF
+DXM,YAHOO/TSX_DXM_TO,XTF Morningstar Cda Div Tgt 30 ETF
+FIE,YAHOO/TSX_FIE_A_TO,Claymore Cdn Financial Mthly Income ETF
+FIE,YAHOO/TSX_FIE_TO,Claymore Cdn Fin Mthly Inc ETF
+FXF,YAHOO/TSX_FXF_TO,Can Financials Income ETF
+FXM,YAHOO/TSX_FXM_TO,XTF Morningstar CAD Value Idx ETF
+GAS,YAHOO/TSX_GAS_TO,Claymore Natural Gas Commodity ETF
+HAA,YAHOO/TSX_HAA_A_TO,Horizons Balanced ETF
+HAA,YAHOO/TSX_HAA_TO,Horizons Balanced ETF
+HAB,YAHOO/TSX_HAB_TO,Horizons Corporate Bond ETF
+HAC,YAHOO/TSX_HAC_A_TO,Horizons Seasonal Rotation ETF
+HAC,YAHOO/TSX_HAC_TO,Horizons Seasonal Rotation ETF
+HAF,YAHOO/TSX_HAF_A_TO,Horizons Tactical Bond ETF
+HAF,YAHOO/TSX_HAF_TO,Horizons Tactical Bond ETF
+HAG,YAHOO/TSX_HAG_TO,Horizons Gartman ETF
+HAH,YAHOO/TSX_HAH_A_TO,Horizons Sp TSX 60 130 30 Idx ETF
+HAH,YAHOO/TSX_HAH_TO,Horizons Sp TSX 60 130 30 ETF
+HAL,YAHOO/TSX_HAL_TO,Horizons Dividend ETF
+HAP,YAHOO/TSX_HAP_A_TO,Horizons Income Plus ETF
+HAP,YAHOO/TSX_HAP_TO,Horizons Income Plus ETF
+HAV,YAHOO/TSX_HAV_A_TO,Horizons Na Value ETF
+HAV,YAHOO/TSX_HAV_TO,Horizons North American Value ETF
+HAW,YAHOO/TSX_HAW_TO,Horizons North American Growth ETF
+HAZ,YAHOO/TSX_HAZ_TO,Horizons Global Dividend ETF
+HDD,YAHOO/TSX_HDD_TO,Horizons Betapro US Dollar Bear Plus ETF
+HDU,YAHOO/TSX_HDU_TO,Horizons Betapro US Dollar Bull Plus ETF
+HEE,YAHOO/TSX_HEE_A_TO,Horizons Enhd Income Energy ETF
+HEE,YAHOO/TSX_HEE_TO,Horizons Enhanced Income Energy ETF
+HEF,YAHOO/TSX_HEF_A_TO,Horizons Enhd Income Financial ETF
+HEF,YAHOO/TSX_HEF_TO,Horizons Enhanced Income Fin ETF
+HEJ,YAHOO/TSX_HEJ_A_TO,Horizons Enhd Inc Intl Equity ETF
+HEJ,YAHOO/TSX_HEJ_TO,Horizons Enhd Inc Intl Equity ETF
+HEP,YAHOO/TSX_HEP_A_TO,Horizons Enhd Income Gold Prod ETF
+HEP,YAHOO/TSX_HEP_TO,Horizons Enhanced Income Gold Prod ETF
+HEW,YAHOO/TSX_HEW_TO,Horizons Sp/Tsx 60 Equal Wgt Idx ETF
+HEX,YAHOO/TSX_HEX_A_TO,Horizons Enhd Income Equity ETF
+HEX,YAHOO/TSX_HEX_TO,Horizons Enhanced Income Equity ETF
+HFD,YAHOO/TSX_HFD_TO,Horizons Betapro S&P/Tsx Cap Fins Br ETF
+HFR,YAHOO/TSX_HFR_A_TO,Horizons Floating Rate Bond ETF
+HFR,YAHOO/TSX_HFR_TO,Horizons Floating Rate Bond ETF
+HFU,YAHOO/TSX_HFU_TO,Horizons Betapro S&P/Tsx Cap Fins Bl ETF
+HGD,YAHOO/TSX_HGD_TO,Horizons Bp Gold Bear Plus ETF
+HGY,YAHOO/TSX_HGY_A_TO,Horizons Gold Yield ETF
+HGY,YAHOO/TSX_HGY_TO,Horizons Gold Yield ETF
+HHF,YAHOO/TSX_HHF_A_TO,Horizons Morningstar Hdg Fd Idx ETF
+HHF,YAHOO/TSX_HHF_TO,Horizons Morningstar Hdg Fd Idx ETF
+HIE,YAHOO/TSX_HIE_TO,Horizons Btp Cpd Energy Inverse ETF
+HIF,YAHOO/TSX_HIF_TO,Horizons Betapro S&P/Tsx Fin Inverse ETF
+HIG,YAHOO/TSX_HIG_TO,Horizons Btp Global Gold Inverse ETF
+HIN,YAHOO/TSX_HIN_TO,Horizons Bp Nymex Nat Gas Inverse ETF
+HIO,YAHOO/TSX_HIO_TO,Horizons Betapro Nymex Crude Inverse ETF
+HIU,YAHOO/TSX_HIU_TO,Horizons Betapro Sp 500 Inverse ETF
+HIX,YAHOO/TSX_HIX_TO,Horizons Betapro S&P/Tsx 60 Inverse ETF
+HIZ,YAHOO/TSX_HIZ_TO,Horizons Bp Comex Silver Inv ETF
+HJE,YAHOO/TSX_HJE_TO,Horizons Gmp Junior Oil And Gas Idx ETF
+HKD,YAHOO/TSX_HKD_TO,Horizons Bp Comex Copper Bear Plus ETF
+HKU,YAHOO/TSX_HKU_TO,Horizons Bp Comex Copper Bull Plus ETF
+HMF,YAHOO/TSX_HMF_A_TO,Horizons Auspice Managed Futures ETF
+HMF,YAHOO/TSX_HMF_TO,Horizons Auspice Managed Futures ETF
+HND,YAHOO/TSX_HND_TO,Horizons Betapro Nymex Nat Gas Bear ETF
+HNU,YAHOO/TSX_HNU_TO,Horizons Beta Pro Nymex Nat Gas Bull ETF
+HNY,YAHOO/TSX_HNY_A_TO,Horizons Natural Gas Yield ETF
+HNY,YAHOO/TSX_HNY_TO,Horizons Natural Gas Yield ETF
+HOD,YAHOO/TSX_HOD_TO,Horizon Beta Pro Nymex Crde Oil Bear ETF
+HOU,YAHOO/TSX_HOU_TO,Horizon Betapro Nymex Crde Oil Bull ETF
+HOY,YAHOO/TSX_HOY_A_TO,Horizons Crude Oil Yield ETF
+HOY,YAHOO/TSX_HOY_TO,Horizons Crude Oil Yield ETF
+HPR,YAHOO/TSX_HPR_TO,Horizons Preferred Share ETF
+HQD,YAHOO/TSX_HQD_TO,Horizons Betapro Nasdaq100 Bear Plus ETF
+HQU,YAHOO/TSX_HQU_TO,Horizons Betapro Nasdaq100 Bull Plus ETF
+HSD,YAHOO/TSX_HSD_TO,Horizons Betapro S&P 500R Bear Plus ETF
+HSU,YAHOO/TSX_HSU_TO,Horizons Betapro S&P 500R Bull Plus ETF
+HTD,YAHOO/TSX_HTD_TO,Horizons Betapro U.To 30 Yr Bear Plus ETF
+HTU,YAHOO/TSX_HTU_TO,Horizons Betapro U.To 30 Yr Bull Plus ETF
+HUC,YAHOO/TSX_HUC_TO,Horizons Wt Nymex Crude Oil ETF
+HUG,YAHOO/TSX_HUG_TO,Horizons Comex Gold ETF
+HUK,YAHOO/TSX_HUK_TO,Horizons Comex Copper ETF
+HUN,YAHOO/TSX_HUN_TO,Horizons Wt Nymex Nat Gas ETF
+HUV,YAHOO/TSX_HUV_TO,Horizons Bp Sp500 VIX ST Futures ETF
+HUZ,YAHOO/TSX_HUZ_TO,Horizons Comex Silver ETF
+HVI,YAHOO/TSX_HVI_TO,Horizons Bp Sp500 VIX ST Fut Inv ETF
+HXD,YAHOO/TSX_HXD_TO,Horizons Betapro S&P/Tsx60 Bear Plus ETF
+HXS,YAHOO/TSX_HXS_TO,Horizons Sp500 Index Cdn Hedged ETF
+HXT,YAHOO/TSX_HXT_TO,Horizons Sp Tsx60 Index ETF
+HXU,YAHOO/TSX_HXU_TO,Horizons Betapro S&P/Tsx60 Bull Plus ETF
+HYI,YAHOO/TSX_HYI_A_TO,Horizons High Yield Bd ETF
+HYI,YAHOO/TSX_HYI_TO,Horizons High Yield Bd ETF
+HZD,YAHOO/TSX_HZD_TO,Horizons Bp Comex Silver Bear Plus ETF
+HZU,YAHOO/TSX_HZU_TO,Horizons Bp Comex Silver Bull Plus ETF
+HZY,YAHOO/TSX_HZY_A_TO,Horizons Silver Yield ETF
+HZY,YAHOO/TSX_HZY_TO,Horizons Silver Yield ETF
+LXF,YAHOO/TSX_LXF_A_TO,Can 60 Income Adv Class A ETF
+LXF,YAHOO/TSX_LXF_TO,Can 60 Income ETF
+MXF,YAHOO/TSX_MXF_A_TO,Can Materials Income ETF
+MXF,YAHOO/TSX_MXF_TO,Can Materials Income ETF
+OXF,YAHOO/TSX_OXF_TO,Can Energy Income ETF
+PDC,YAHOO/TSX_PDC_TO,Powershares Cdn Div Idx ETF
+PFH,YAHOO/TSX_PFH_TO,Powershares HY Corp Bond Idx ETF
+PGL,YAHOO/TSX_PGL_TO,Powershares Ultra Dlux Lt Govt Bd ETF
+PPS,YAHOO/TSX_PPS_TO,Powershares Cdn Pref Share Idx ETF
+PSB,YAHOO/TSX_PSB_TO,Pwrshrs 1 To 5 Yrladder Inv Grd Bd ETF
+PXC,YAHOO/TSX_PXC_TO,Powershr FTSE Rafi CAD Idx ETF
+PXU,YAHOO/TSX_PXU_TO,Powershr FTSE Rafi US Idx ETF
+QQC,YAHOO/TSX_QQC_TO,Powershares QQQ CAD Hdg Idx ETF
+QXM,YAHOO/TSX_QXM_A_TO,XTF Morningstar Nb Quebec AC ETF
+QXM,YAHOO/TSX_QXM_TO,XTF Morningstar Nb Quebec ETF
+RQA,YAHOO/TSX_RQA_TO,RBC Target 2013 Corp Bond Index ETF
+RQB,YAHOO/TSX_RQB_TO,RBC Target 2014 Corp Bond Index ETF
+RQC,YAHOO/TSX_RQC_TO,RBC Target 2015 Corp Bond Index ETF
+RQD,YAHOO/TSX_RQD_TO,RBC Target 2016 Corp Bond Index ETF
+RQE,YAHOO/TSX_RQE_TO,RBC Target 2017 Corp Bond Index ETF
+RQF,YAHOO/TSX_RQF_TO,RBC Target 2018 Corp Bond ETF
+RQG,YAHOO/TSX_RQG_TO,RBC Target 2019 Corp Bond ETF
+RQH,YAHOO/TSX_RQH_TO,RBC Target 2020 Corp Bond ETF
+TLV,YAHOO/TSX_TLV_TO,Powershares Sp TSX Low Vol Idx ETF
+TXF,YAHOO/TSX_TXF_A_TO,Tech Giants Covered Call Cl A ETF
+TXF,YAHOO/TSX_TXF_TO,Tech Giants Covered Call ETF
+UHB,YAHOO/TSX_UHB_TO,Pwrshrs Sp500 High Beta CAD Hdg Idx ETF
+ULV,YAHOO/TSX_ULV_TO,Powershares Sp500 Low Volatility ETF
+UXM,YAHOO/TSX_UXM_A_TO,XTF Morningstar US Div Tgt 50 AC ETF
+UXM,YAHOO/TSX_UXM_TO,XTF Morningstar US Div Tgt 50 ETF
+VAB,YAHOO/TSX_VAB_TO,Vanguard Cdn Aggregate Bond Index ETF
+VCE,YAHOO/TSX_VCE_TO,Vanguard MSCI Canada Index ETF
+VEE,YAHOO/TSX_VEE_TO,Vanguard MSCI Emg Mkts Index ETF
+VEF,YAHOO/TSX_VEF_TO,Vanguard MSCI EAFE Index ETF
+VSB,YAHOO/TSX_VSB_TO,Vanguard Cdn Short-Term Bond Index ETF
+VUS,YAHOO/TSX_VUS_TO,Vanguard MSCI US Brd Mkt Idx ETF
+WXM,YAHOO/TSX_WXM_TO,XTF Morningstar CAD Momentum Idx ETF
+XQQ,YAHOO/TSX_XQQ_TO,Ishares Nasdaq 100 Index Fd CAD ETF
+ZAG,YAHOO/TSX_ZAG_TO,Bmo Aggregate Bond Index ETF
+ZCA,YAHOO/TSX_ZCA_TO,Bmo Agriculture Commodities Index ETF
+ZCB,YAHOO/TSX_ZCB_TO,Bmo Base Metals Commodities Index ETF
+ZCE,YAHOO/TSX_ZCE_TO,Bmo Energy Commodities Index ETF
+ZCH,YAHOO/TSX_ZCH_TO,Bmo China Equity Hedged To CAD Index ETF
+ZCM,YAHOO/TSX_ZCM_TO,Bmo Mid Corporate Bond Index ETF
+ZCN,YAHOO/TSX_ZCN_TO,Bmo DOW Jones Cda Titans 60 Index ETF
+ZCP,YAHOO/TSX_ZCP_TO,Bmo Precious Metals Comm Idx ETF
+ZCS,YAHOO/TSX_ZCS_TO,Bmo Short Corp Bond Index ETF
+ZDJ,YAHOO/TSX_ZDJ_TO,Bmo DJIA Hedged To CAD Index ETF
+ZDM,YAHOO/TSX_ZDM_TO,Bmo Intl Equity Hedged To CAD Index ETF
+ZDV,YAHOO/TSX_ZDV_TO,Bmo Canadian Dividend ETF
+ZEB,YAHOO/TSX_ZEB_TO,Bmo Sp TSX Equal Weight Banks Index ETF
+ZEF,YAHOO/TSX_ZEF_TO,Bmo Emg Mkt Bond Hdgd To CAD Idx ETF
+ZEM,YAHOO/TSX_ZEM_TO,Bmo Emerging Markets Equity Index ETF
+ZEO,YAHOO/TSX_ZEO_TO,Bmo Sp TSX Eql Weight Oil Gas Index ETF
+ZFL,YAHOO/TSX_ZFL_TO,Bmo Long Fed Bond Index ETF
+ZFM,YAHOO/TSX_ZFM_TO,Bmo Mid Federal Bond Index ETF
+ZFS,YAHOO/TSX_ZFS_TO,Bmo Short Federal Bond Index ETF
+ZGI,YAHOO/TSX_ZGI_TO,Bmo Global Infrastructure Index ETF
+ZHY,YAHOO/TSX_ZHY_TO,Bmo High Yld US Corp Bnd Hdg CAD Idx ETF
+ZID,YAHOO/TSX_ZID_TO,Bmo India Equity Hedged To CAD Index ETF
+ZJG,YAHOO/TSX_ZJG_TO,Bmo Junior Gold Index ETF
+ZJN,YAHOO/TSX_ZJN_TO,Bmo Junior Gas Index ETF
+ZJO,YAHOO/TSX_ZJO_TO,Bmo Junior Oil Index ETF
+ZLB,YAHOO/TSX_ZLB_TO,Bmo Low Volatility CAD Equity ETF
+ZLC,YAHOO/TSX_ZLC_TO,Bmo Long Corporate Bond Index ETF
+ZMI,YAHOO/TSX_ZMI_TO,Bmo Monthly Income ETF
+ZMT,YAHOO/TSX_ZMT_TO,Bmo Sptsx Eql Wgt Glb Metal Hed CAD ETF
+ZPS,YAHOO/TSX_ZPS_TO,Bmo Short Provincial Bond Index ETF
+ZQQ,YAHOO/TSX_ZQQ_TO,Bmo Nasdaq 100 Hedged To CAD Index ETF
+ZRE,YAHOO/TSX_ZRE_TO,Bmo Equal Weight Reits Index ETF
+ZRR,YAHOO/TSX_ZRR_TO,Bmo Real Return Bond Index ETF
+ZUB,YAHOO/TSX_ZUB_TO,Bmo Eql Wgt US Bank Hdgd To CAD Idx ETF
+ZUE,YAHOO/TSX_ZUE_TO,Bmo US Equity Hedged To CAD Index ETF
+ZUH,YAHOO/TSX_ZUH_TO,Bmo Eql Wgt US Hcare Hdgd To CAD Idx ETF
+ZUT,YAHOO/TSX_ZUT_TO,Bmo Equal Weight Utilities Index ETF
+ZWA,YAHOO/TSX_ZWA_TO,Bmo Covered Call DJIA CAD ETF
+ZWB,YAHOO/TSX_ZWB_TO,Bmo Covered Call Canadian Banks ETF
+ZWU,YAHOO/TSX_ZWU_TO,Bmo Covered Call Utilities ETF
+ZXA,YAHOO/TSX_ZXA_TO,Bmo 2013 Corp Bond Target Mat ETF
+ZXB,YAHOO/TSX_ZXB_TO,Bmo 2015 Corp Bond Target Mat ETF
+ZXC,YAHOO/TSX_ZXC_TO,Bmo 2020 Corp Bond Target Mat ETF
+ZXD,YAHOO/TSX_ZXD_TO,Bmo 2025 Corp Bd Tgt Mat ETF

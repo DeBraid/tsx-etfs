@@ -1,10 +1,3 @@
-<template name="tickerList">
-  <button type="button" 
-          id="{{ this }}" 
-          class="ticker btn btn-xs btn-default">{{ this }}
-  </button>
-</template>
-
 <template name="tickerInfo">
   {{#with tickerInfo }}
     {{#if tryAgain }}
@@ -19,4 +12,18 @@
       {{/if}}
     {{/if}}
   {{/with}}
+</template>
+
+<template name="tickerList">
+   <div class="row tickerContainer">
+      <div class="col-sm-12">
+        <h3>ETFs</h3>
+          {{#each tickers }}
+              <button type="button" 
+                      id="{{ ticker }}" 
+                      class="ticker btn btn-xs btn-default">{{ ticker }}
+              </button>
+          {{/each}}
+      </div>
+   </div>
 </template>
