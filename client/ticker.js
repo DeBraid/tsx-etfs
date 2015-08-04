@@ -22,19 +22,3 @@ Template.tickerList.events({
     startSearch( clickedTicker );
   }
 });
-
-Template.tickerList.helpers({
-  tickers: function () {
-    // Session.get('rank', value);
-  }
-});
-
-// Template.leaderboard.players = function () {
-//     return Players.find({}, {sort: {score: -1, name: 1}});
-// };
-
-// Template.lineChart.helpers({
-//   tickers: function () {
-//     // ...
-//   }
-// });
