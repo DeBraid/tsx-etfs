@@ -7,7 +7,7 @@ Router.map(function () {
   this.route('chart', { 
     path: '/chart/:ticker',
       data: function() {  
-        startSearch( this.params.ticker );
+        Meteor.call('startSearch', this.params.ticker);
     }
   });
 });
@@ -31,4 +31,5 @@ Router.onAfterAction(function() {
             'image': 'http://static01.nyt.com/images/2015/08/04/world/04BURUNDI/04BURUNDI-master675.jpg' 
        }
     });
-})
+    return;
+});

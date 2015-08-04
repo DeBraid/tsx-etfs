@@ -19,6 +19,6 @@ Template.tickerInfo.events({
 Template.tickerList.events({
   'click .ticker': function (e , t) {
     var clickedTicker = e.target.id;
-    startSearch( clickedTicker );
+    Meteor.call('startSearch', clickedTicker);
   }
 });
