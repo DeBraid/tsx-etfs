@@ -6,10 +6,11 @@ Meteor.methods({
         console.log(
             'startSearch route', route,
             'searched: ', searched,
-            'inputState from startSearch:', Session.get('inputState')
+            'inputState:', Session.get('inputState')
         );
 
         if (route == searched) {
+            $('input#ticker-search').val(searched);
             return;
         } else {
             Session.set('inputState', 'has-warning');
