@@ -4,9 +4,6 @@ Template.tickerInfo.helpers({
   },
   showFullDescription : function () {
     return Session.get('showFullDescription');
-  },
-  tickers : function () {
-    return Etfs.find()
   } 
 });
 
