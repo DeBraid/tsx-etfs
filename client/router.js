@@ -46,7 +46,7 @@ Router.map(function () {
         data: function () {
             Meteor.call('startSearch', this.params.ticker);
             return {
-                tickers: Stocks.find();
+                tickers: Stocks.find()
             }
         }
 
