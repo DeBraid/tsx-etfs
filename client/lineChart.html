@@ -10,7 +10,17 @@
     <div class="col-sm-5">    
       {{> waiting}}
       <div class="row">
-        {{#with inputState }}
+        {{> searchBox }}
+      </div>
+      <div class="row">
+        {{> tickerList }}
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="searchBox">
+    {{#with inputState }}
           <div class="input-group add-on {{ klass }}">
             <input type="text" class="form-control" placeholder="Enter ticker symbol" name="ticker" id="ticker-search">
             <div id="get-new-data" class="input-group-btn">
@@ -19,10 +29,4 @@
             </div>
           </div>
         {{/with}}
-      </div>
-      <div class="row">
-        {{> tickerList }}
-      </div>
-    </div>
-  </div>
 </template>

@@ -1,6 +1,10 @@
 h1, h3, h4 {
   color: #324684;
 }
+.jumbotron {
+  background-color: rgba(72, 0, 1, 0.34);
+  margin-top: 30px;
+}
 
 #lineChart .axis path,
 #lineChart .axis line {
