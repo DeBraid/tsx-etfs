@@ -5,7 +5,12 @@
 			    <h1>TSX ETFs and Stocks</h1>
 			    <p>by Derek Braid aka <a href="http://twitter.com/Royal_Arse">@Royal_Arse</a></p>
 			    <p>
-			        <a class="btn btn-primary btn-lg pull-right" href="{{ pathFor 'chart' ticker='ZEB' }}" role="button">View ETF Charts <i class="glyphicon glyphicon-signal"></i></a>
+			        <a style="margin-right: 2em;" class="btn btn-warning btn-lg pull-right" href="{{ pathFor 'etfs' ticker='ZEB' }}" role="button">
+			        	<h4>ETFs <i class="glyphicon glyphicon-signal"></i></h4>
+			        </a>
+			        <a style="margin-right: 2em;" class="btn btn-success btn-lg pull-right" href="{{ pathFor 'stocks' ticker='ZEB' }}" role="button">
+			        	<h4>Stocks <i class="glyphicon glyphicon-signal"></i></h4>
+			        </a>
 			    </p>
 			</div>
 		

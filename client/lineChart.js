@@ -11,7 +11,6 @@ Template.lineChart.created = function () {
                 console.log(error);
                 return Session.set('tryAgain', true);
             } else {
-                console.log('try again false!');
                 Session.set('tryAgain', false);
             }
 
