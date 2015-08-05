@@ -8,25 +8,19 @@ Router.map(function () {
         yieldTemplates: {
             'welcome': {  to : 'welcome' },
             'footer': {  to : 'footer' }
-        },
-        subscriptions: function () {
-            return Meteor.subscribe('tickers');
-        },
-        data: function () {
-            return {
-                tickers: Tickers.find()
-            }
         }
     });
 
-    this.route('chart', {
-        path: '/chart/:ticker',
+    this.route('etfs', {
+        path: '/etfs/:ticker',
         yieldTemplates: {
             'backHome': {  to : 'backHome' },
             'chart_layout': {  to : 'chart' },
+            'etf_ticker_list': {  to : 'tickerBlock' },
             'footer': {  to : 'footer' }
         },
         subscriptions: function () {
+            // change name of this collection to etfs
             return Meteor.subscribe('tickers');
         },
         data: function () {
@@ -38,21 +32,21 @@ Router.map(function () {
 
     });
 
-    this.route('charts', {
-        path: '/charts/:security/:ticker',
+    this.route('stocks', {
+        path: '/stocks/:ticker',
         yieldTemplates: {
             'backHome': {  to : 'backHome' },
             'chart_layout': {  to : 'chart' },
+            'stock_ticker_list': {  to : 'tickerBlock' },
             'footer': {  to : 'footer' }
         },
         subscriptions: function () {
-            return Meteor.subscribe('tickers');
+            return Meteor.subscribe('stocks');
         },
         data: function () {
             Meteor.call('startSearch', this.params.ticker);
-            console.log('charts/:security:', this.params.security);
             return {
-                tickers: Tickers.find()
+                tickers: Stocks.find();
             }
         }
 
