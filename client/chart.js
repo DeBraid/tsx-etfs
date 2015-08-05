@@ -2,6 +2,7 @@ Meteor.methods({
     startSearch: function (searched) {
         var stub = Router.current().url;
         var route = stub.split('/chart/')[1];
+        Session.set('currentTicker', route);
 
         console.log(
             'startSearch route', route,
@@ -50,9 +51,10 @@ Template.lineChart.helpers({
 Template.lineChart.created = function () {
     Tracker.autorun(function () {
         var ticker,
-            data = Session.get('selectedTicker');
+            data = Session.get('selectedTicker'),
+            data1 = Session.get('currentTicker');
 
-        data ? ticker = data : ticker = "XIU";
+        data ? ticker = data : ticker = data1;
 
         Meteor.call("getQuandlData", ticker.toUpperCase(), function (error, result) {
             if (error) {
