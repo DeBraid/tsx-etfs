@@ -7,12 +7,12 @@ Router.map(function () {
   this.route('chart', { 
     path: '/chart/:ticker',
       subscriptions: function () {
-        return Meteor.subscribe('etfs');
+        return Meteor.subscribe('tickers');
       },
       data: function() {  
         Meteor.call('startSearch', this.params.ticker);
         return {
-          tickers: Etfs.find()
+          tickers: Tickers.find()
         }
       }
 

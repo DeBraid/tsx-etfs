@@ -15,7 +15,6 @@ Meteor.methods({
   }  
 });
 
-
-Meteor.publish('etfs', function () {
-	return Etfs.find();
+Meteor.publish('tickers', function () {
+	return Tickers.find();
 });

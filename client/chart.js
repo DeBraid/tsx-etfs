@@ -93,7 +93,6 @@ Template.lineChart.created = function () {
 };
 
 Template.lineChart.rendered = function () {
-    // var margin = {top: 20, right: 20, bottom: 30, left: 35},
     var margin = {
             top: 15,
             right: 10,
@@ -132,7 +131,7 @@ Template.lineChart.rendered = function () {
         .attr("width", width + margin.left + margin.top)
         .attr("height", height + margin.top + margin.bottom)
         .append("g")
-        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+        .attr("transform", "translate(" + margin.left*1.25 + "," + margin.top + ")");
 
     // .append("g")
     // .attr("transform", "translate(" + margin + "," + margin + ")");
