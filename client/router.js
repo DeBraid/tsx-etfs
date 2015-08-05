@@ -23,7 +23,7 @@ Router.map(function () {
         path: '/chart/:ticker',
         yieldTemplates: {
             'backHome': {  to : 'backHome' },
-            'lineChart': {  to : 'chart' },
+            'chart_layout': {  to : 'chart' },
             'footer': {  to : 'footer' }
         },
         subscriptions: function () {
@@ -31,6 +31,26 @@ Router.map(function () {
         },
         data: function () {
             Meteor.call('startSearch', this.params.ticker);
+            return {
+                tickers: Tickers.find()
+            }
+        }
+
+    });
+
+    this.route('charts', {
+        path: '/charts/:security/:ticker',
+        yieldTemplates: {
+            'backHome': {  to : 'backHome' },
+            'chart_layout': {  to : 'chart' },
+            'footer': {  to : 'footer' }
+        },
+        subscriptions: function () {
+            return Meteor.subscribe('tickers');
+        },
+        data: function () {
+            Meteor.call('startSearch', this.params.ticker);
+            console.log('charts/:security:', this.params.security);
             return {
                 tickers: Tickers.find()
             }

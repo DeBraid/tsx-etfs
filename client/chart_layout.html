@@ -1,0 +1,26 @@
+
+<template name="chart_layout">
+    <div class="row">
+        {{> left_chart_col }}
+        {{> right_chart_col}}
+    </div>
+</template>
+
+<template name="left_chart_col">
+    <div id="line-chart-container" class="col-sm-7">
+        {{> tickerInfo }}
+        {{> lineChart }}
+    </div>
+</template>
+
+<template name="right_chart_col">
+    <div class="col-sm-5">
+    {{> waiting}}
+    <div class="row">
+        {{> searchBox }}
+    </div>
+    <div class="row">
+        {{> tickerList }}
+    </div>
+</div>
+</template>

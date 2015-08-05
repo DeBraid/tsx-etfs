@@ -14,7 +14,3 @@ Meteor.methods({
     return Meteor.http.get( url + authKey );
   }  
 });
-
-Meteor.publish('tickers', function () {
-	return Tickers.find();
-});
