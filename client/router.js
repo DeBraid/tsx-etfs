@@ -48,13 +48,10 @@ Router.map(function () {
         },
         data: function () {
             Meteor.call('startSearch', this.params.ticker);
-            var foo = {
+            return {
                 tickers: Stocks.find(),
                 cdz: CDZ.find()
             }
-            console.log('foo.cdz', foo.cdz);
-            console.log('foo.tickers', foo.tickers);
-            return foo;
         }
 
     });
