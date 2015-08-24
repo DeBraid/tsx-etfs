@@ -41,13 +41,20 @@ Router.map(function () {
             'footer': {  to : 'footer' }
         },
         subscriptions: function () {
-            return Meteor.subscribe('stocks');
+            return [
+                Meteor.subscribe('stocks'),
+                Meteor.subscribe('cdz')
+            ]
         },
         data: function () {
             Meteor.call('startSearch', this.params.ticker);
-            return {
-                tickers: Stocks.find()
+            var foo = {
+                tickers: Stocks.find(),
+                cdz: CDZ.find()
             }
+            console.log('foo.cdz', foo.cdz);
+            console.log('foo.tickers', foo.tickers);
+            return foo;
         }
 
     });

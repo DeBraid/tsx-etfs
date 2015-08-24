@@ -9,6 +9,10 @@ Meteor.publish('tickers', function () {
 	return Tickers.find();
 });
 
+Meteor.publish('cdz', function () {
+	return CDZ.find();
+});
+
 Meteor.publish('stocks', function () {
 	// for ETFs
 	return Stocks.find();

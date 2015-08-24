@@ -3,6 +3,7 @@
         <div class="col-sm-12">
             <h3>Stocks</h3> 
             {{> tickerList }}
+            {{> cdz_ticker_list }}
         </div>
     </div>
 </template>
@@ -17,3 +18,7 @@
     </div>
 </template>
 
+<template name="cdz_ticker_list">
+    <h3>Canadian Dividend Aristocrats:</h3>
+    {{> tickerList tickers=cdz }}
+</template>
